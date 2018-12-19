@@ -9,12 +9,12 @@ select * from dd_item_type;
 
 update item_info set ITEM_PASSWORD = null where id = 8;
 
-select * from user_info;
+
 insert into dd_item_type values(1,0,'dir','文件夹',0,1);
 select * from dd_item_type;
 insert into dd_item_type values(2,0,'txt','文本文件',0,1);
 delete from dd_item_type where TYPE_ID = 1;
-drop table user_info;
+
 
 select userinfo0_.ID as ID10_, userinfo0_.STATUS as STATUS10_, userinfo0_.USER_CREATE_DATE as USER3_10_, userinfo0_.USER_EMAIL as USER4_10_, userinfo0_.USER_GUID as USER5_10_, userinfo0_.USER_LAST_LOGIN_DATE as USER6_10_, userinfo0_.USER_LOGO as USER7_10_, userinfo0_.USER_NAME as USER8_10_, userinfo0_.USER_PASSWORD as USER9_10_, userinfo0_.USER_PATH as USER10_10_, userinfo0_.USER_PHONE as USER11_10_, userinfo0_.USER_SPACE_SIZE as USER12_10_, userinfo0_.USER_TYPE as USER13_10_ from note_alphadb.user_info userinfo0_ where (userinfo0_.USER_NAME=? )
 ;
@@ -46,13 +46,15 @@ where ii.user_id = 1 and ii.item_type = 2
   ALTER TABLE user_item_tag add COLUMN TAG_NAME varchar(20);
  
  
- select * from user_info;
+drop table user_info;
+
+select * from user_info;
  
- delete from user_info where ID=2;
+ delete from user_info where ID=1;
  
  drop database bsmdb;
  
- 
+ select ID from user_info where USER_NAME='RicciLIao';
  
  show variables like '%time_zone%';
  
@@ -60,12 +62,12 @@ where ii.user_id = 1 and ii.item_type = 2
  set global time_zone='+8:00';
  commit;
  
- call createUser('888','1','1','1','1','1',@p_out);
+ call createUser('1','1','1','1','1','1',@p_out);
  
  select @p_out;
  
   SELECT now();
  
- 
+select count(ID) FROM user_info WHERE USER_PHONE = '15626248822' and USER_NAME = 'RicciLiao';
  
  
