@@ -50,7 +50,7 @@ drop table user_info;
 
 select * from user_info;
  
- delete from user_info where ID=1;
+ delete from user_info where ID=3;
  
  drop database bsmdb;
  
@@ -60,6 +60,7 @@ select * from user_info;
  
  
  set global time_zone='+8:00';
+ 
  commit;
  
  call createUser('1','1','1','1','1','1',@p_out);
